@@ -1,7 +1,7 @@
 database:
   driver: com.mysql.cj.jdbc.Driver
   # Host name: 'mysql' for docker-compose, 'localhost' or '127.0.0.1' for local test.
-  url: "jdbc:mysql://localhost:3306/cookbook?charset=utf8mb4&serverTimezone=UTC&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true"
+  url: "jdbc:mysql://mysql:3306/cookbook?charset=utf8mb4&serverTimezone=UTC&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true"
   username: cookbook
   password: cookbook
 
