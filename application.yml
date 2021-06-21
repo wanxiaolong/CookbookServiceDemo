@@ -1,0 +1,26 @@
+database:
+  driver: com.mysql.cj.jdbc.Driver
+  # Host name: 'mysql' for docker-compose, 'localhost' or '127.0.0.1' for local test.
+  url: "jdbc:mysql://localhost:3306/cookbook?charset=utf8mb4&serverTimezone=UTC&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true"
+  username: cookbook
+  password: cookbook
+
+logging:
+  appenders:
+    # Log warnings and errors to stderr
+    - type: console
+      threshold: INFO
+      target: stdout
+      timeZone: UTC
+
+    # Log info, warnings and errors to our apps' main log.
+    # Rolled over daily and retained for 5 days.
+    - type: file
+      threshold: INFO
+      discardingThreshold: 0
+      currentLogFilename: ./logs/cookbook.log
+      archive: true
+      archivedLogFilenamePattern: ./logs/cookbook-%d.log
+      archivedFileCount: 5
+      immediateFlush: true
+      timeZone: UTC
